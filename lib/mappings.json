@@ -1,0 +1,10 @@
+{
+  "name": "@john-ui-kit/react-native",
+  "index": "lib/module/index.js",
+  "mappings": {
+    "TimerText": {
+      "path": "lib/module/components/TimerText",
+      "name": "default"
+    }
+  }
+}
