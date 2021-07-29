@@ -17,7 +17,7 @@
     "lint": "eslint --ext '.js,.ts,.tsx' .",
     "test": "jest",
     "build": "bob build && node ./scripts/generate-mappings.js",
-    "release": "dotenv release-it",
+    "release": "release-it",
     "bootstrap": "yarn --cwd example && yarn --cwd docs && yarn",
     "docs": "yarn --cwd docs",
     "example:start": "cd ./example && yarn start"
