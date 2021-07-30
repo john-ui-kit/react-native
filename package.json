@@ -11,6 +11,7 @@
   "files": [
     "lib"
   ],
+  "repository": "john-ui-kit/react-native",
   "sideEffects": false,
   "scripts": {
     "typescript": "tsc --noEmit",
@@ -23,14 +24,15 @@
     "example:start": "cd ./example && yarn start"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "dependencies": {
-    "@types/react": "^17.0.15",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-native": "^0.64.2"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^1.1.0",
+    "@types/react": "^17.0.15",
     "dotenv-cli": "^4.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-native-builder-bob": "^0.17.1",
@@ -39,8 +41,7 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-vector-icons": "*"
+    "react-native": "*"
   },
   "react-native-builder-bob": {
     "source": "src",
