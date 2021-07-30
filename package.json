@@ -21,22 +21,28 @@
     "release": "release-it",
     "bootstrap": "yarn --cwd example && yarn --cwd docs && yarn",
     "docs": "yarn --cwd docs",
-    "example:start": "cd ./example && yarn start"
+    "example:start": "cd ./example && yarn start",
+    "image-cli": "ts-node ./scripts/image-cli.ts"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-native": "^0.64.2"
+    "react-native": "^0.64.2",
+    "react-native-unimodules": "^0.14.6",
+    "expo-linear-gradient": "^9.2.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^1.1.0",
     "@types/react": "^17.0.15",
+    "@types/react-native": "~0.63.2",
+    "@types/terminal-kit": "^1.28.3",
     "dotenv-cli": "^4.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-native-builder-bob": "^0.17.1",
     "release-it": "^13.4.0",
+    "terminal-kit": "^2.1.6",
     "typescript": "~4.0.0"
   },
   "peerDependencies": {
