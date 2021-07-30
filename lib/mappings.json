@@ -5,6 +5,10 @@
     "TimerText": {
       "path": "lib/module/components/TimerText",
       "name": "default"
+    },
+    "SliderBar": {
+      "path": "lib/module/components/SliderBar/index",
+      "name": "default"
     }
   }
 }

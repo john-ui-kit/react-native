@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2021-07-30 16:54:32
+ * @LastEditTime: 2021-07-30 17:07:44
  * @Date: 2021-07-30 15:17:00
  * @Author: John
  * @LastEditors: John
@@ -111,7 +111,7 @@ const SliderBar: React.ForwardRefRenderFunction<SliderBarRef, SliderBarProps> =
       onStartShouldSetPanResponderCapture: () => true,
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderMove: (evt, gestureState) => {
+      onPanResponderMove: (_evt, gestureState) => {
         // 最近一次的移动距离为gestureState.move{X,Y}
         // 从成为响应者开始时的累计手势移动距离为gestureState.d{x,y}
         changeSliderDistance(sliderbtnDistance + gestureState.dx);
