@@ -2,26 +2,28 @@
  * @Author: John
  * @Date: 2021-06-30 15:53:03
  * @LastEditors: John
- * @LastEditTime: 2021-07-29 15:23:15
+ * @LastEditTime: 2021-08-02 15:19:13
  */
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from "react";
+import { zeroSupple } from "../utils";
 
-export default function TimerText(props: {
-  unit: 'second' | 'minute';
+interface Props {
+  unit: "second" | "minute";
   slot: React.FunctionComponent<{
     endTimestamp: number;
     countDown: number;
-    hour: number;
-    second?: number;
-    minute: number;
+    hour: string;
+    second?: string;
+    minute: string;
   }>;
   expiryTimestamp: number;
-}) {
-  const { unit = 'second' } = props;
+}
+const TimerText: React.FunctionComponent<Props> = (props) => {
+  const { unit = "second" } = props;
   // const [expiryTimestamp, setExpiryTimestamp] = useState(0);
   const [countDown, setCountDown] = useState(0);
   const endTimestamp = useMemo(() => {
-    if (unit == 'minute') {
+    if (unit == "minute") {
       return new Date().getTime() + countDown * 1000 * 60;
     } else {
       return new Date().getTime() + countDown * 1000;
@@ -29,20 +31,20 @@ export default function TimerText(props: {
   }, [countDown]);
   let timer: any = null;
   const timeDate = useMemo<{
-    hour: number;
-    second?: number;
-    minute: number;
+    hour: string;
+    second?: string;
+    minute: string;
   }>(() => {
-    if (unit == 'minute') {
+    if (unit == "minute") {
       return {
-        hour: parseInt(`${countDown / 60}`),
-        minute: parseInt(`${countDown}`) % 60,
+        hour: zeroSupple(parseInt(`${countDown / 60}`)),
+        minute: zeroSupple(parseInt(`${countDown}`) % 60),
       };
     } else {
       return {
-        hour: parseInt(`${countDown / 60 / 60}`),
-        minute: parseInt(`${countDown / 60}`) % 60,
-        second: parseInt(`${countDown % 60}`),
+        hour: zeroSupple(parseInt(`${countDown / 60 / 60}`)),
+        minute: zeroSupple(parseInt(`${countDown / 60}`) % 60),
+        second: zeroSupple(parseInt(`${countDown % 60}`)),
       };
     }
   }, [countDown, unit]);
@@ -51,9 +53,9 @@ export default function TimerText(props: {
 
     let time: number = props.expiryTimestamp;
     let ms: number = 0;
-    if (unit == 'second') {
+    if (unit == "second") {
       ms = 1000;
-    } else if (unit == 'minute') {
+    } else if (unit == "minute") {
       ms = 1000 * 60;
     }
     setCountDown(time);
@@ -80,4 +82,6 @@ export default function TimerText(props: {
   }, [props.expiryTimestamp]);
 
   return <>{props.slot({ endTimestamp, countDown, ...timeDate })}</>;
-}
+};
+
+export default TimerText;
