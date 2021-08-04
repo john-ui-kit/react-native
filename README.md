@@ -7,7 +7,9 @@
 ## Getting Started
 
 ```shell
-yarn add @john-ui-kit/react-native or npm install @john-ui-kit/react-native
+yarn add @john-ui-kit/react-native 
+// or
+npm install @john-ui-kit/react-native
 ```
 
 ## Documentation

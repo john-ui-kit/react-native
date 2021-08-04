@@ -1,18 +1,32 @@
 /*
- * @LastEditTime: 2021-08-02 15:25:28
+ * @LastEditTime: 2021-08-04 09:51:43
  * @Date: 1985-10-26 16:15:00
  * @Author: John
  * @LastEditors: John
  */
-import { SliderBar, TimerText } from "@john-ui-kit/react-native";
+import { SliderBar, useTimer } from "@john-ui-kit/react-native";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 export default function App() {
+  const [expriyTimes, setExpriyTimes] = useState(5 * 60 * 60);
+  const { hour, minute, second, start } = useTimer({
+    expiryTimestamp: expriyTimes,
+    unit: "second",
+  });
+
+  useEffect(() => {
+    start(expriyTimes);
+    setTimeout(() => {
+      start(10 * 60 * 60);
+    }, 5000);
+    return () => {};
+  }, []);
   return (
     <View style={styles.container}>
       {/* <SliderBar /> */}
-      <TimerText
+      <Text>{`${hour}:${minute}:${second}`}</Text>
+      {/* <TimerText
         unit="second"
         slot={({ hour, minute, second }) => (
           <Text>{`${hour}:${minute}:${second}`}</Text>
@@ -26,7 +40,7 @@ export default function App() {
           <Button title={`${hour}:${minute}:${second}`} onPress={() => {}} />
         )}
         expiryTimestamp={5 * 60 * 60}
-      />
+      /> */}
 
       {/* <TimerText
         unit="minute"
