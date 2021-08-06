@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2021-08-04 09:51:43
+ * @LastEditTime: 2021-08-06 15:30:52
  * @Date: 1985-10-26 16:15:00
  * @Author: John
  * @LastEditors: John
@@ -26,22 +26,7 @@ export default function App() {
     <View style={styles.container}>
       {/* <SliderBar /> */}
       <Text>{`${hour}:${minute}:${second}`}</Text>
-      {/* <TimerText
-        unit="second"
-        slot={({ hour, minute, second }) => (
-          <Text>{`${hour}:${minute}:${second}`}</Text>
-        )}
-        expiryTimestamp={5 * 60 * 60}
-      />
-
-      <TimerText
-        unit="second"
-        slot={({ hour, minute, second }) => (
-          <Button title={`${hour}:${minute}:${second}`} onPress={() => {}} />
-        )}
-        expiryTimestamp={5 * 60 * 60}
-      /> */}
-
+      <Button title={`${hour}:${minute}:${second}`} onPress={() => {}} />
       {/* <TimerText
         unit="minute"
         slot={({ hour, minute, second }) => <Text>{`${hour}:${minute}`}</Text>}

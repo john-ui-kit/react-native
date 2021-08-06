@@ -1,10 +1,3 @@
-/*
- * @LastEditTime: 2021-07-30 17:07:44
- * @Date: 2021-07-30 15:17:00
- * @Author: John
- * @LastEditors: John
- */
-import { LinearGradient } from "expo-linear-gradient";
 import React, {
   forwardRef,
   useEffect,
@@ -15,6 +8,7 @@ import React, {
 } from "react";
 import { View, Image, PanResponder, Text } from "react-native";
 import IMAGES_ASSETS from "../../assets/images";
+import LinearGradient from "react-native-linear-gradient";
 /**
  * 传值
  */

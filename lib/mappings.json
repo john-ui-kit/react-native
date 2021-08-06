@@ -2,8 +2,8 @@
   "name": "@john-ui-kit/react-native",
   "index": "lib/module/index.js",
   "mappings": {
-    "TimerText": {
-      "path": "lib/module/components/TimerText",
+    "useTimer": {
+      "path": "lib/module/hook/useTimer",
       "name": "default"
     },
     "SliderBar": {

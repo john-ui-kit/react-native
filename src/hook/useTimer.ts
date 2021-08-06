@@ -2,9 +2,9 @@
  * @Author: John
  * @Date: 2021-06-30 15:53:03
  * @LastEditors: John
- * @LastEditTime: 2021-08-04 09:51:00
+ * @LastEditTime: 2021-08-06 15:26:55
  */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { zeroSupple } from "../utils";
 
 interface Props {
@@ -112,14 +112,6 @@ const useTimer = (props: Props) => {
     }, ms);
   };
 
-  // useEffect(() => {
-  //   start();
-  //   return () => {
-  //     clearInterval(timer);
-  //   };
-  // }, [props.expiryTimestamp]);
-
-  // return <>{props.slot({ endTimestamp, countDown, ...timeDate })}</>;
   return { endTimestamp, countDown, ...timeDate, start };
 };
 

@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2021-07-29 17:28:35
+ * @LastEditTime: 2021-08-06 10:51:48
  * @Date: 2021-07-29 17:28:32
  * @Author: John
  * @LastEditors: John
@@ -8,7 +8,7 @@ const path = require("path");
 const createExpoWebpackConfigAsync = require("@expo/webpack-config");
 const { resolver } = require("./metro.config");
 
-const root = path.resolve(__dirname, "..");
+const root = path.resolve(__dirname, "../../");
 const node_modules = path.join(__dirname, "node_modules");
 
 module.exports = async function (env, argv) {

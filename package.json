@@ -5,7 +5,7 @@
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "types": "lib/typescript/index.d.ts",
-  "source": "src/index.tsx",
+  "source": "src/index.ts",
   "author": "John",
   "license": "MIT",
   "files": [
@@ -20,24 +20,25 @@
     "build": "bob build && node ./scripts/generate-mappings.js",
     "release:npm": "npm login && npm publish --access public ",
     "release": "release-it",
-    "bootstrap": "yarn --cwd example && yarn --cwd docs && yarn",
-    "docs": "yarn --cwd docs",
-    "example:start": "cd ./example && yarn start",
+    "example-expo:start": "cd ./example/expo-app && yarn start",
     "image-cli": "ts-node ./scripts/image-cli.ts"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "expo-linear-gradient": "^9.2.0",
     "react": "^17.0.2",
     "react-native": "^0.64.2",
-    "react-native-unimodules": "^0.14.6",
-    "expo-linear-gradient": "^9.2.0"
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-unimodules": "^0.14.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
     "@release-it/conventional-changelog": "^1.1.0",
-    "@types/react": "^17.0.15",
-    "@types/react-native": "~0.63.2",
+    "@types/react": "^17.0.2",
+    "@types/react-native": "^0.64.2",
     "@types/terminal-kit": "^1.28.3",
     "dotenv-cli": "^4.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
@@ -47,10 +48,10 @@
     "typescript": "~4.0.0"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*",
+    "react": "^17.0.2",
+    "react-native": "^0.64.2",
     "react-native-unimodules": "^0.14.6",
-    "expo-linear-gradient": "^9.2.0"
+    "react-native-linear-gradient": "^2.5.6"
   },
   "react-native-builder-bob": {
     "source": "src",

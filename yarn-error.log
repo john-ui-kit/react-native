@@ -34,7 +34,7 @@ npm manifest:
     "main": "lib/commonjs/index.js",
     "module": "lib/module/index.js",
     "types": "lib/typescript/index.d.ts",
-    "source": "src/index.tsx",
+    "source": "src/index.ts",
     "author": "John",
     "license": "MIT",
     "files": [
@@ -48,9 +48,9 @@ npm manifest:
       "test": "jest",
       "build": "bob build && node ./scripts/generate-mappings.js",
       "release": "release-it",
-      "bootstrap": "yarn --cwd example && yarn --cwd docs && yarn",
+      "bootstrap": "yarn --cwd example/expo-app && yarn --cwd docs && yarn",
       "docs": "yarn --cwd docs",
-      "example:start": "cd ./example && yarn start"
+      "example-expo:start": "cd ./example/expo-app && yarn start"
     },
     "publishConfig": {
       "access": "public"

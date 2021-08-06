@@ -1,11 +1,17 @@
+/*
+ * @LastEditTime: 2021-08-06 12:28:44
+ * @Date: 2021-07-29 17:29:49
+ * @Author: John
+ * @LastEditors: John
+ */
 // /* eslint-disable import/no-commonjs */
 
 const path = require("path");
 const blacklist = require("metro-config/src/defaults/blacklist");
 const escape = require("escape-string-regexp");
-const pak = require("../package.json");
+const pak = require("../../package.json");
 
-const root = path.resolve(__dirname, "..");
+const root = path.resolve(__dirname, "../../");
 
 const modules = [
   "@expo/vector-icons",

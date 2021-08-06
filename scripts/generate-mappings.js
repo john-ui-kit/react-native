@@ -14,7 +14,7 @@ const parser = require('@babel/parser');
 const packageJson = require('../package.json');
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'lib/mappings.json');
-const source = fs.readFileSync(path.resolve(root, 'src', 'index.tsx'), 'utf8');
+const source = fs.readFileSync(path.resolve(root, 'src', 'index.ts'), 'utf8');
 const ast = parser.parse(source, {
   sourceType: 'module',
   plugins: [
