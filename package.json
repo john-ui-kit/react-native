@@ -19,7 +19,7 @@
     "test": "jest",
     "build": "bob build && node ./scripts/generate-mappings.js",
     "release:npm": "npm login && npm publish --access public ",
-    "release": "release-it --npm.skipChecks",
+    "release": "release-it",
     "example-expo:start": "cd ./example/expo-app && yarn start",
     "image-cli": "ts-node ./scripts/image-cli.ts"
   },
@@ -36,14 +36,14 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
-    "@release-it/conventional-changelog": "^1.1.0",
+    "@release-it/conventional-changelog": "^3.0.1",
     "@types/react": "^17.0.2",
     "@types/react-native": "^0.64.2",
     "@types/terminal-kit": "^1.28.3",
     "dotenv-cli": "^4.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-native-builder-bob": "^0.17.1",
-    "release-it": "^13.4.0",
+    "release-it": "^14.11.0",
     "terminal-kit": "^2.1.6",
     "typescript": "~4.0.0"
   },
