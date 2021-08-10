@@ -12,6 +12,7 @@ declare type SliderBarProps = {
     onPanResponderMove?: (num: number) => void;
     resetValue?: (reset: (value: number) => void) => void;
     finalChange?: (num: number) => void;
+    sliderDefaultWidth?: number;
 };
 /**
  * 对外导出控制方法

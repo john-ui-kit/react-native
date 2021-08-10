@@ -6,7 +6,13 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { View, Image, PanResponder, Text } from "react-native";
+import {
+  View,
+  Image,
+  PanResponder,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import IMAGES_ASSETS from "../../assets/images";
 import LinearGradient from "react-native-linear-gradient";
 /**
@@ -22,6 +28,7 @@ type SliderBarProps = {
   onPanResponderMove?: (num: number) => void;
   resetValue?: (reset: (value: number) => void) => void;
   finalChange?: (num: number) => void;
+  sliderDefaultWidth?: number;
 };
 
 /**
@@ -32,6 +39,7 @@ export type SliderBarRef = {
 };
 const SliderBar: React.ForwardRefRenderFunction<SliderBarRef, SliderBarProps> =
   (props, ref) => {
+    const { sliderDefaultWidth = 210 } = props;
     /**
      * 滑块按钮滑动的位置
      */
@@ -47,7 +55,7 @@ const SliderBar: React.ForwardRefRenderFunction<SliderBarRef, SliderBarProps> =
     /**
      * 滑块的宽度
      */
-    const sliderWidth = useRef<number>(210 - sliderBtnWidth.current);
+    const sliderWidth = useRef<number>(sliderDefaultWidth - 20);
     /**
      * 默认值
      */
@@ -214,7 +222,7 @@ const SliderBar: React.ForwardRefRenderFunction<SliderBarRef, SliderBarProps> =
           <View
             {...SliderResponder.panHandlers}
             style={{
-              width: 210,
+              width: sliderDefaultWidth,
               height: 22,
               backgroundColor: "#F8F8F8",
               borderRadius: 11,
@@ -285,8 +293,8 @@ const SliderBar: React.ForwardRefRenderFunction<SliderBarRef, SliderBarProps> =
             alignItems: "center",
           }}
         >
-          <View
-            onTouchStart={() => {
+          <TouchableOpacity
+            onPress={() => {
               changeSliderDistance(sliderbtnDistance - sliderStep).then(() =>
                 props.finalChange?.(finalNumRef.current)
               );
@@ -294,16 +302,16 @@ const SliderBar: React.ForwardRefRenderFunction<SliderBarRef, SliderBarProps> =
             style={{ marginRight: 9 }}
           >
             <Image source={IMAGES_ASSETS.slider_icon_left} />
-          </View>
-          <View
-            onTouchStart={() => {
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
               changeSliderDistance(sliderbtnDistance + sliderStep).then(() =>
                 props.finalChange?.(finalNumRef.current)
               );
             }}
           >
             <Image source={IMAGES_ASSETS.slider_icon_right} />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     );

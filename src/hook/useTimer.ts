@@ -2,9 +2,9 @@
  * @Author: John
  * @Date: 2021-06-30 15:53:03
  * @LastEditors: John
- * @LastEditTime: 2021-08-06 15:26:55
+ * @LastEditTime: 2021-08-10 15:54:15
  */
-import React, { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { zeroSupple } from "../utils";
 
 interface Props {
@@ -14,26 +14,6 @@ interface Props {
    * @memberof Props
    */
   unit: "second" | "minute";
-  /**
-   * @description 插槽slot
-   * @type {(React.FunctionComponent<{
-   *     endTimestamp: number;
-   *     countDown: number;
-   *   } & TimeDate>)}
-   * @memberof Props
-   */
-  slot?: React.FunctionComponent<
-    {
-      endTimestamp: number;
-      countDown: number;
-    } & TimeDate
-  >;
-  /**
-   * @description 传入的开始时间戳
-   * @type {number}
-   * @memberof Props
-   */
-  expiryTimestamp: number;
 }
 
 /**
@@ -91,8 +71,6 @@ const useTimer = (props: Props) => {
    * 倒计时开始
    */
   const start = (expiryTimestamp: number) => {
-    clearInterval(timer);
-
     let time: number = expiryTimestamp;
     let ms: number = 0;
     if (unit == "second") {
@@ -112,7 +90,21 @@ const useTimer = (props: Props) => {
     }, ms);
   };
 
-  return { endTimestamp, countDown, ...timeDate, start };
+  /**
+   * 重置倒计时
+   * @param expiryTimestamp
+   */
+  const reset = (expiryTimestamp: number) => {
+    clearInterval(timer);
+    start(expiryTimestamp);
+  };
+
+  useEffect(() => {
+    clearInterval(timer);
+    return () => {};
+  }, []);
+
+  return { endTimestamp, countDown, ...timeDate, start, reset };
 };
 
 export default useTimer;
