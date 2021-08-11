@@ -29,18 +29,16 @@
     "access": "public"
   },
   "dependencies": {
-    "expo-linear-gradient": "^9.2.0",
     "react": "^17.0.2",
-    "react-native": "^0.64.2",
-    "react-native-linear-gradient": "^2.5.6",
-    "react-native-unimodules": "^0.14.6"
+    "react-native": "^0.61.5",
+    "react-native-linear-gradient": "^2.5.6"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
     "@release-it/conventional-changelog": "^3.0.1",
     "@types/react": "^17.0.2",
-    "@types/react-native": "^0.64.2",
+    "@types/react-native": "^0.61.5",
     "@types/terminal-kit": "^1.28.3",
     "dotenv-cli": "^4.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
@@ -51,8 +49,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.2",
-    "react-native": "^0.64.2",
-    "react-native-unimodules": "^0.14.6",
+    "react-native": "^0.61.5",
     "react-native-linear-gradient": "^2.5.6"
   },
   "react-native-builder-bob": {

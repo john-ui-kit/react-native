@@ -9,7 +9,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-
+lib/
 # macOS
 .DS_Store
 example/default-app/android/app/build/
+example/default-app/android/build/kotlin/sessions/
