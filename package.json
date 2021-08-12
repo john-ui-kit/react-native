@@ -1,6 +1,6 @@
 {
   "name": "@john-ui-kit/react-native",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "react-native组件库",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
