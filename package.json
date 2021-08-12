@@ -23,7 +23,9 @@
     "example-expo:start": "cd ./example/expo-app && yarn start",
     "default-app:start": "cd ./example/default-app && yarn start",
     "default-app:start-reset-cache": "cd ./example/default-app && yarn start --reset-cache",
-    "image-cli": "ts-node ./scripts/image-cli.ts"
+    "image-cli": "ts-node ./scripts/image-cli.ts",
+    "iconfont-init": "npx iconfont-init",
+    "iconfont-rn": "npx iconfont-rn"
   },
   "publishConfig": {
     "access": "public"
@@ -33,6 +35,7 @@
     "react-native": "^0.61.5",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-root-siblings": "^4.1.1",
+    "react-native-svg": "^12.1.1",
     "react-spring": "^9.2.4"
   },
   "devDependencies": {
@@ -45,6 +48,7 @@
     "dotenv-cli": "^4.0.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-native-builder-bob": "^0.17.1",
+    "react-native-iconfont-cli": "^2.2.3",
     "release-it": "^14.11.0",
     "terminal-kit": "^2.1.6",
     "typescript": "~4.0.0"
@@ -52,7 +56,7 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-native": "^0.61.5",
-    "react-native-linear-gradient": "^2.5.6"
+    "react-native-svg": "^12.1.1"
   },
   "react-native-builder-bob": {
     "source": "src",

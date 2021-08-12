@@ -1,12 +1,12 @@
 /*
- * @LastEditTime: 2021-08-11 16:35:30
+ * @LastEditTime: 2021-08-12 14:12:30
  * @Date: 1985-10-26 16:15:00
  * @Author: John
  * @LastEditors: John
  */
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import {
   SliderBar,
   usePrompt,
@@ -18,12 +18,37 @@ export default function App() {
   const Timer = useTimer({ unit: "second" });
   useEffect(() => {
     Timer.start(10000);
-    prompt.show({ content: "This is prompt!!" });
     return () => {};
   }, []);
   return (
     <RootSiblingParent>
       <View style={styles.container}>
+        <Button
+          title="show prompt1"
+          onPress={() =>
+            prompt.show({
+              text: "This is prompt 1 !!",
+              duration: 0,
+              type: "error",
+              maskOpct: 0,
+              clickMaskClose: false,
+            })
+          }
+        />
+        <Button
+          title="show prompt2"
+          onPress={() =>
+            prompt.show({
+              text: "This is prompt 2 !!",
+              duration: 0,
+              type: "warning",
+              mask: false,
+              position: "bottom",
+              bottom: 20,
+            })
+          }
+        />
+        <Button title="hide prompt" onPress={prompt.hide} />
         <SliderBar />
         <Text>
           {Timer.hour}:{Timer.minute}:{Timer.second}
