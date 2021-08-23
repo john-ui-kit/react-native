@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2021-08-12 14:02:19
+ * @LastEditTime: 2021-08-17 14:30:55
  * @Date: 2021-08-12 11:41:44
  * @Author: John
  * @LastEditors: John
@@ -9,17 +9,28 @@ import { useTransition, animated } from "@react-spring/native";
 import type { ViewProps } from "react-native";
 
 type MaskProps = {
+  /**
+   * @description 是否显示
+   * @type {boolean}
+   */
   show: boolean;
+  /**
+   * @description 遮罩层的透明度
+   * @type {number}
+   */
   maskOpct?: number;
 } & ViewProps;
 /**
- * 遮罩层
+ * @description 遮罩层
  * @param props
  * @returns
  */
 const Mask: React.FunctionComponent<MaskProps> = (props) => {
   const { maskOpct = 0.1 } = props;
   const [show, setShow] = useState(props.show);
+  /**
+   * 动画样式使用useTransition
+   */
   const maskTransitions = useTransition(show, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -29,6 +40,7 @@ const Mask: React.FunctionComponent<MaskProps> = (props) => {
     setShow(props.show);
     return () => {};
   }, [props.show]);
+  /** 组件使用maskTransitions包装 */
   return maskTransitions((MaslStyleProps, item) => {
     return (
       item && (

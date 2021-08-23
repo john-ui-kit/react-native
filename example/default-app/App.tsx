@@ -1,5 +1,5 @@
 /*
- * @LastEditTime: 2021-08-12 14:12:30
+ * @LastEditTime: 2021-08-12 15:43:14
  * @Date: 1985-10-26 16:15:00
  * @Author: John
  * @LastEditors: John
@@ -30,8 +30,8 @@ export default function App() {
               text: "This is prompt 1 !!",
               duration: 0,
               type: "error",
-              maskOpct: 0,
-              clickMaskClose: false,
+              maskOpct: 0.5,
+              top: 50
             })
           }
         />
@@ -40,7 +40,7 @@ export default function App() {
           onPress={() =>
             prompt.show({
               text: "This is prompt 2 !!",
-              duration: 0,
+              duration: 5000,
               type: "warning",
               mask: false,
               position: "bottom",
@@ -49,11 +49,11 @@ export default function App() {
           }
         />
         <Button title="hide prompt" onPress={prompt.hide} />
-        <SliderBar />
+        {/* <SliderBar />
         <Text>
           {Timer.hour}:{Timer.minute}:{Timer.second}
         </Text>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text>Open up App.js to start working on your app!</Text> */}
         <StatusBar style="auto" />
       </View>
     </RootSiblingParent>

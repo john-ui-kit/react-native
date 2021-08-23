@@ -2,7 +2,7 @@
  * @Author: John
  * @Date: 2021-07-02 17:02:23
  * @LastEditors: John
- * @LastEditTime: 2021-08-12 14:15:49
+ * @LastEditTime: 2021-08-12 15:42:13
  */
 
 import React, {
@@ -172,6 +172,9 @@ const PromptComponent = forwardRef<PromptComponentRef, PromptComponentProps>(
       default:
         break;
     }
+    /**
+     * 动画样式使用useTransition
+     */
     const transitions = useTransition(show, {
       from: fromStyle as any,
       enter: enterStyle,
@@ -181,6 +184,9 @@ const PromptComponent = forwardRef<PromptComponentRef, PromptComponentProps>(
     useEffect(() => {
       console.log("组件初始化");
       if (props.duration == 0) return;
+      /**
+       * 定时关闭
+       */
       const timer = setTimeout(() => {
         setShow(false);
       }, props.duration);
@@ -188,6 +194,7 @@ const PromptComponent = forwardRef<PromptComponentRef, PromptComponentProps>(
         clearTimeout(timer);
       };
     }, []);
+    /**对外导出方法 */
     useImperativeHandle(
       ref,
       () => {
@@ -197,6 +204,9 @@ const PromptComponent = forwardRef<PromptComponentRef, PromptComponentProps>(
       },
       []
     );
+    /**
+     * 内容组件，由transitions包装
+     */
     const content = transitions((styleProps, item) => {
       return (
         item && (
@@ -213,7 +223,6 @@ const PromptComponent = forwardRef<PromptComponentRef, PromptComponentProps>(
               display: "flex",
               alignItems: "center",
               flexDirection: "row",
-              // marginHorizontal: 20,
               marginTop: 6,
               ...styleProps,
             }}
@@ -264,6 +273,7 @@ const PromptComponent = forwardRef<PromptComponentRef, PromptComponentProps>(
     return (
       <>
         {props.mask && (
+          /** mask组件 */
           <Mask
             show={show!}
             maskOpct={props.maskOpct}
